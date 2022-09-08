@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import WeatherSlider from './components/WeatherSlider';
+import WeatherList from './components/WeatherList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //parent container holding weather slider with 7 elements
+    <div>
+      <WeatherSlider>
+          <WeatherList/>
+      </WeatherSlider>
     </div>
-  );
+  )
 }
 
 export default App;

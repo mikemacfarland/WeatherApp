@@ -14,8 +14,6 @@ function WeatherList({weatherData}) {
             icon: `I${day.Day.Icon}`,
             phrase: day.Day.IconPhrase
             }
-        
-        console.log(weatherIcon.icon,weatherIcon.phrase)
 
         return (
             <div className='weather_list_item' key={dayName}>

@@ -11,17 +11,17 @@ function App() {
   const [error,setError] = useState('')
   const apiKey = 'sEXI2rsvsiBsixCl56UM26BkmhwNFCyl'
 
-  useEffect(()=> {
-    fetchWeather();
-    console.log('fetch')
-  },[zipCode])
-
   const fetchWeather = async ()=>{
     const response =  await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${zipCode}?apikey=${apiKey}
     `)
     const data = await response.json()
     return setWeather(data.DailyForecasts)
   }
+  
+  useEffect(()=> {
+    fetchWeather()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[zipCode])
 
   return (
     <div className='wrapper'>

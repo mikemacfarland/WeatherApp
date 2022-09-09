@@ -7,30 +7,34 @@ body{
     background-color: lightgrey;
 }
 
-.search_bar{
-    width: fit-content;
-    height: fit-content;
-    margin: auto;
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 25vh auto;
 }
 
 .search_bar_box{
+    margin: auto;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-    height: 30px;
-    min-width: 80%;
+    max-width: 80%;
 }
 
 .search_bar_box button,
 .search_bar_box input{
+    height: 40px;
     font-size: 1rem;
-    width:200px;
     outline: none;
+    width:200px;
     border: 2px solid rgba(0, 0, 0, .3);
     border-radius: 7px;
 }
 
 .search_bar_box button{
+    margin-left: 1rem;
     cursor: pointer;
 }
 
@@ -43,15 +47,13 @@ body{
 }
 
 .search_bar_box input{
+    margin-right: 1rem;
     text-indent: .5rem;
 }
 
-
-
 .weather_slider{
     margin: auto;
-    margin-top: calc(100vh/2 - 60px);
-    height: 120px;
+    height: fit-content;
     max-width: 80vw;
     min-width: 120px;
     display: flex;

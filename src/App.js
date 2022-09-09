@@ -6,7 +6,7 @@ import { useState,useEffect} from 'react';
 
 function App() {
 
-  const [weather,setWeather] =  useState('default')
+  const [weather,setWeather] =  useState([])
   const [zipCode,setZipcode] = useState('49931')
   const apiKey = 'sEXI2rsvsiBsixCl56UM26BkmhwNFCyl'
 
@@ -22,11 +22,10 @@ function App() {
   }
 
   return (
-    //parent container holding weather slider with 7 elements
-    <div>
+    <div className='wrapper'>
       <ZipSearch zip={zipCode}/>
       <WeatherSlider>
-          {/* <WeatherList weatherData={weather}/> */}
+        <WeatherList weatherData={weather}/>
       </WeatherSlider>
     </div>
   )

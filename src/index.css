@@ -7,6 +7,47 @@ body{
     background-color: lightgrey;
 }
 
+.search_bar{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.search_bar_box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 30px;
+    min-width: 80%;
+}
+
+.search_bar_box button,
+.search_bar_box input{
+    font-size: 1rem;
+    width:200px;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, .3);
+    border-radius: 7px;
+}
+
+.search_bar_box button{
+    cursor: pointer;
+}
+
+.search_bar_box button:hover{
+    background-color: #a5a5a5;
+}
+
+.search_bar_box button:active{
+    transform: scale(.98);
+}
+
+.search_bar_box input{
+    text-indent: .5rem;
+}
+
+
+
 .weather_slider{
     margin: auto;
     margin-top: calc(100vh/2 - 60px);

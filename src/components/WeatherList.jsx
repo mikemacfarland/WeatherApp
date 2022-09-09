@@ -1,89 +1,9 @@
 import React from 'react'
 // import icons from '../assets/Icons'
 
-const weather = [
-    {
-        day: 'sun',
-        temp_max: 78,
-        temp_min: 67,
-        weather:{
-            description: 'light rain'
-        },
-        clouds:{
-            all: 100
-        }
-    },
-    {
-        day: 'mon',
-        temp_max: 78,
-        temp_min: 67,
-        weather:{
-            description: 'light rain'
-        },
-        clouds:{
-            all: 100
-        }
-    },
-    {
-        day: 'tues',
-        temp_max: 78,
-        temp_min: 67,
-        weather:{
-            description: 'light rain'
-        },
-        clouds:{
-            all: 100
-        }
-    },
-    {
-        day: 'wed',
-        temp_max: 78,
-        temp_min: 67,
-        weather:{
-            description: 'light rain'
-        },
-        clouds:{
-            all: 100
-        }
-    },
-    {
-        day: 'thurs',
-        temp_max: 78,
-        temp_min: 67,
-        weather:{
-            description: 'light rain'
-        },
-        clouds:{
-            all: 100
-        }
-    },
-    {
-        day: 'fri',
-        temp_max: 78,
-        temp_min: 67,
-        weather:{
-            description: 'light rain'
-        },
-        clouds:{
-            all: 100
-        }
-    },
-    {
-        day: 'sat',
-        temp_max: 78,
-        temp_min: 67,
-        weather:{
-            description: 'partly cloudy'
-        },
-        clouds:{
-            all: 35
-        }
-    }
-    ]
-
-function WeatherList() {
+function WeatherList({weatherData}) {
   return (
-    weather.map(day =>{
+    weatherData.map(day =>{
         return(
             <div className='weather_list_item' key={day.day}>
                 <p className="day">{day.day}</p>

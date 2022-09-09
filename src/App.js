@@ -12,7 +12,7 @@ function App() {
   const apiKey = 'sEXI2rsvsiBsixCl56UM26BkmhwNFCyl'
 
   const fetchWeather = async ()=>{
-    const response =  await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${zipCode}?apikey=${apiKey}
+    const response =  await fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${zipCode}?apikey=${apiKey}
     `)
     const data = await response.json()
     return setWeather(data.DailyForecasts)

@@ -8,6 +8,7 @@ function App() {
 
   const [weather,setWeather] =  useState([])
   const [zipCode,setZipCode] = useState('49931')
+  const [error,setError] = useState('')
   const apiKey = 'sEXI2rsvsiBsixCl56UM26BkmhwNFCyl'
 
   useEffect(()=> {
@@ -24,7 +25,9 @@ function App() {
 
   return (
     <div className='wrapper'>
-      <ZipSearch zip={zipCode} setZip={setZipCode}/>
+      <p className='intro' >you are viewing the 5 day forecast for zipcode {zipCode}</p>
+      <ZipSearch setZip={setZipCode} setZipError={setError}/>
+      <p className='error'>{error}</p>
       <WeatherSlider>
         <WeatherList weatherData={weather}/>
       </WeatherSlider>

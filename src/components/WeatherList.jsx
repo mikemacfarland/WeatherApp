@@ -1,13 +1,17 @@
 import Icons from '../assets/Icons'
+import { useContext } from 'react';
+import WeatherContext from '../context/WeatherContext';
 
-function WeatherList({weatherData}) {
+function WeatherList() {
+
+    const {weather,} = useContext(WeatherContext)
 
     const getDayName = (dateStr, locale)=>{
             var date = new Date(dateStr);
             return date.toLocaleDateString(locale, { weekday: 'long' });        
             }
 
-    return weatherData.map(day =>{
+    return weather.map(day =>{
 
         const dayName = getDayName(day.Date)
         const weatherIcon = {

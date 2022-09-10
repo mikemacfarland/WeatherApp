@@ -1,7 +1,10 @@
-import { useState } from "react"
+import { useState,useContext} from "react"
+import WeatherContext from "../context/WeatherContext";
 
-function ZipSearch({setZip,setZipError}) {
+function ZipSearch() {
 
+  //importing context here
+  const {setError,setZipCode} = useContext(WeatherContext)
   const [isDisabled,setDisabled] = useState(true)
   const [inputVal,setInputVal] = useState('')
 
@@ -13,15 +16,15 @@ function ZipSearch({setZip,setZipError}) {
 
   const handleChange = (e)=>{
     if(onlyNumbers(e.target.value)) {
-      setZipError('')
+      setError('')
       if(e.target.value.length === 5){
         setDisabled(false)
         return setInputVal(e.target.value) 
       }
     }
     if(!onlyNumbers(e.target.value)){
-      e.target.value.length === 0 ? setZipError('') :
-      setZipError('Please enter a 5 digit numberical zip code')
+      e.target.value.length === 0 ? setError('') :
+      setError('Please enter a 5 digit numberical zip code')
       setDisabled(true)
     }
     else{
@@ -31,7 +34,7 @@ function ZipSearch({setZip,setZipError}) {
 
   const handleSubmit  = (e)=>{
     e.preventDefault()
-    setZip(inputVal)
+    setZipCode(inputVal)
   }
 
   return (

@@ -1,36 +1,28 @@
-import ZipSearch from './components/ZipSearch';
-import WeatherSlider from './components/WeatherSlider';
-import WeatherList from './components/WeatherList';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import { WeatherProvider } from './context/WeatherContext';
+import Weather from './pages/Weather';
 
-import { useState,useEffect} from 'react';
+// how make this app into very cool app
+// .05 use context to pass all states
+//  1. make weather tabs openable and get hourly weather for a day
+//  2. redesign the IU
+//  6. add display for night weather on day cards.
+//  3. add city and state detection
+//  4. add dropdown list of saved locations (add delete)
+//  4. add not found display for zip code error
+//  5. add functionability for 10 day forecast
+//  7. add functionability for other parameter displays
+//  6. export into mobile app
 
 function App() {
 
-  const [weather,setWeather] =  useState([])
-  const [zipCode,setZipCode] = useState('49931')
-  const [error,setError] = useState('')
-  const apiKey = 'sEXI2rsvsiBsixCl56UM26BkmhwNFCyl'
-
-  const fetchWeather = async ()=>{
-    const response =  await fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${zipCode}?apikey=${apiKey}
-    `)
-    const data = await response.json()
-    return setWeather(data.DailyForecasts)
-  }
-  
-  useEffect(()=> {
-    fetchWeather()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[zipCode])
-
   return (
     <div className='wrapper'>
-      <p className='intro' >you are viewing the 5 day forecast for zipcode {zipCode}</p>
-      <ZipSearch setZip={setZipCode} setZipError={setError}/>
-      <p className='error'>{error}</p>
-      <WeatherSlider>
-        <WeatherList weatherData={weather}/>
-      </WeatherSlider>
+      <WeatherProvider>
+        <Router>
+          <Weather/>
+        </Router>
+      </WeatherProvider>
     </div>
   )
 }

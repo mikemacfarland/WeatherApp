@@ -1,9 +1,10 @@
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import { WeatherProvider } from './context/WeatherContext';
 import Weather from './pages/Weather';
+import HourlyWeather from './pages/DailyWeather';
 
 // how make this app into very cool app
-// .05 use context to pass all states
+//  --.05 use context to pass all states--
 //  1. make weather tabs openable and get hourly weather for a day
 //  2. redesign the IU
 //  6. add display for night weather on day cards.
@@ -18,9 +19,13 @@ function App() {
 
   return (
     <div className='wrapper'>
+      {/* context porvider */}
       <WeatherProvider>
         <Router>
-          <Weather/>
+          <Routes>
+            <Route exact path='/' element={<Weather/>}/>
+            <Route exact path='/hourly_weather' element={<HourlyWeather/>}/>
+          </Routes>
         </Router>
       </WeatherProvider>
     </div>

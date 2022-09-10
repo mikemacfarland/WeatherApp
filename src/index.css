@@ -16,6 +16,7 @@ body{
 }
 
 .intro{
+    user-select: none;
     text-align: center;
     margin: 1rem;
 }
@@ -48,6 +49,7 @@ body{
 }
 
 .search_bar_box button{
+    user-select: none;
     margin-left: 1rem;
     cursor: pointer;
 }
@@ -77,6 +79,10 @@ body{
 }
 
 .weather_list_item{
+    text-decoration: none;
+    color: inherit;
+    user-select: none;
+    cursor: pointer;
     background-color: #f1f1f1;
     margin: 1rem .4rem;
     padding: 1rem;
@@ -88,9 +94,7 @@ body{
     border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 8px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
-
 }
-
 
 .temp{
     display: flex;

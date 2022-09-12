@@ -2,10 +2,11 @@ import { useContext } from "react"
 import WeatherContext from "../context/WeatherContext"
 
 function LocationSelect() {
-  const {locationResults,setLocation} = useContext(WeatherContext)
+  const {setLocationResults,locationResults,setLocation} = useContext(WeatherContext)
 
   const handleClick = (item)=>{
     setLocation(item)
+    setLocationResults([])
   }
 
   //create click off event to close select?? or just reset locationresults to initial

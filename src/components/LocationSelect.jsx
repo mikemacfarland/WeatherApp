@@ -6,10 +6,11 @@ function LocationSelect() {
 
   const handleClick = (item)=>{
     setLocation(item)
+    console.log(item)
     setLocationResults([])
   }
 
-  //create click off event to close select?? or just reset locationresults to initial
+  //@TODO set logic for results, if no rusults throw error. notify user 
   return (
     <ul className="location_select">
       {locationResults.map(item =>{

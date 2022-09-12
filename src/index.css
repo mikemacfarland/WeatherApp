@@ -1,3 +1,6 @@
+/* @TODO 
+    REFACTOR CSS USING FLEXBOX FOR DISPLAY LAYOUT */
+
 *{
     padding: 0;
     margin:0;
@@ -28,6 +31,44 @@ body{
     left: 50%;
     color: rgb(219, 17, 17);
 }
+
+/* FORECAST SELECT */
+
+.forecast_select{
+    display: flex;
+    background-color: #f1f1f1;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 20px;
+    justify-content: center;
+    margin: auto;
+    list-style-type: none;
+}
+
+.forecast_select li{
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+}
+
+.forecast_select li:hover,
+.active{
+    background-color: antiquewhite;
+}
+
+.forecast_select li:first-of-type{
+    border-radius: 20px 0 0  20px ;
+}
+
+.forecast_select li:last-of-type{
+    border-radius: 0 20px 20px 0;
+}
+
+/* SEARCH */
 
 .search_bar_box{
     position: relative;
@@ -94,6 +135,8 @@ body{
 .location_select li:hover{
     background-color: antiquewhite;
 }
+
+/* WEATHER DISPLAY */
 
 .weather_slider{
     margin: auto;

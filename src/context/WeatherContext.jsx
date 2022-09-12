@@ -7,12 +7,21 @@ export const WeatherProvider = ({children}) =>{
 
     const [locationResults,setLocationResults] = useState([])
     const [location,setLocation] = useState({
-        PrimaryPostalCode: '49931'
+        LocalizedName: 'Houghton',
+        PrimaryPostalCode: '49931',
+        AdministrativeArea:{
+            ID: 'Mi'
         }
+        },
         )
-    // const [forecastType,setForecastType] = useState('5-Day')
+    const [forecastType,setForecastType] = useState('5-Day')
     const [weather,setWeather] =  useState([])
     const [error,setError] = useState('')
+
+
+
+    // @TODO apiKey needs to be stored on backend when deployed !!
+    // also hide from network requests page in devtools.? is that possible?
     const apiKey = 'sEXI2rsvsiBsixCl56UM26BkmhwNFCyl'
     
     const fetchWeather = async ()=>{
@@ -27,14 +36,17 @@ export const WeatherProvider = ({children}) =>{
     },[location])
 
     return <WeatherContext.Provider value={{
+                location,
                 weather,
-                setWeather,
-                error,
-                setError,
                 apiKey,
                 locationResults,
+                error,
+                forecastType,
+                setWeather,
+                setError,
                 setLocationResults,
-                setLocation
+                setLocation,
+                setForecastType,
                 }}> 
                     {children}
                 </WeatherContext.Provider>

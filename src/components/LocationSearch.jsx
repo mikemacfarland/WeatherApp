@@ -1,7 +1,7 @@
 import Icons from "../assets/Icons";
 import {useState,useContext} from "react"
 import WeatherContext from "../context/WeatherContext";
-import LocationSelect from '../components/LocationSelect'
+import LocationSelect from './LocationSelect'
 
 function LocationSearch() {
 

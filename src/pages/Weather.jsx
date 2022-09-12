@@ -1,4 +1,4 @@
-import ZipSearch from '../components/ZipSearch';
+import LocationSearch from '../components/ZipSearch';
 import WeatherList from '../components/WeatherList';
 import { useContext } from 'react';
 import WeatherContext from '../context/WeatherContext';
@@ -6,12 +6,13 @@ import WeatherContext from '../context/WeatherContext';
 
 function Weather() {
 
-    const {error,zipCode} = useContext(WeatherContext)
+    const {error,forecast} = useContext(WeatherContext)
 
   return (
     <>
-        <p className='intro' >you are viewing the 5 day forecast for zipcode {zipCode}</p>
-        <ZipSearch/>
+        {/* <p className='intro' >you are viewing the {forecast} forecast for zipcode {zipCode}</p> */}
+
+        <LocationSearch/>
         <p className='error'>{error}</p>
         <div className='weather_slider'>
           <WeatherList/>

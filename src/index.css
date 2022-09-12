@@ -30,6 +30,7 @@ body{
 }
 
 .search_bar_box{
+    position: relative;
     margin: 1rem auto 2rem auto;
     display: flex;
     flex-direction: row;
@@ -38,33 +39,60 @@ body{
     max-width: 80%;
 }
 
-.search_bar_box button,
-.search_bar_box input{
-    height: 40px;
-    font-size: 1rem;
-    outline: none;
-    width:200px;
-    border: 2px solid rgba(0, 0, 0, .3);
-    border-radius: 7px;
-}
-
-.search_bar_box button{
-    user-select: none;
-    margin-left: 1rem;
-    cursor: pointer;
-}
-
-.search_bar_box button:hover{
-    background-color: #a5a5a5;
-}
-
-.search_bar_box button:active{
-    transform: scale(.98);
-}
-
 .search_bar_box input{
     margin-right: 1rem;
     text-indent: .5rem;
+    height: 40px;
+    font-size: 1rem;
+    outline: none;
+    width:245px;
+    border: none;
+    border-radius: 20px;
+}
+
+.search_bar_box button{
+    position: absolute;
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    transform: translatex(50%);
+    left: 190px;
+}
+
+.location_select{
+    position: absolute;
+    list-style-type: none;
+    background-color: #f1f1f1;
+    top: 40px;
+    left: 0px;
+    width: 250px;
+    z-index: 100;
+    border-radius: 20px;
+}
+
+.location_select li{
+    display: flex;
+    user-select: none;
+    list-style-type: none;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.location_select li:first-child{
+    border-radius: 20px 20px 0 0;
+}
+
+.location_select li:last-child{
+    border-radius: 0 0 20px 20px ;
+}
+
+.location_select li:hover{
+    background-color: antiquewhite;
 }
 
 .weather_slider{

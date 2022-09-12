@@ -1,49 +1,43 @@
-import { useState,useContext} from "react"
+import { useEffect } from "react";
+import Icons from "../assets/Icons";
+import {useState,useContext} from "react"
 import WeatherContext from "../context/WeatherContext";
+import LocationSelect from '../components/LocationSelect'
 
-function ZipSearch() {
+function LocationSearch() {
 
   //importing context here
-  const {setError,setZipCode} = useContext(WeatherContext)
-  const [isDisabled,setDisabled] = useState(true)
-  const [inputVal,setInputVal] = useState('')
+  const {apiKey,setLocationResults} = useContext(WeatherContext)
+  const [inputVal,setInputVal] = useState('49931')
+  const country = 'US'
 
-  // regex test from this page
-  // https://bobbyhadz.com/blog/javascript-check-if-string-contains-only-digits
-  function onlyNumbers(str) {
-    return /^[0-9]+$/.test(str);
+  const fetchLocations = async ()=>{
+    const response = await fetch(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${inputVal}`)
+    const data = await response.json()
+    const filteredData = data.filter(item =>{
+      if(item.Country.ID === country)
+        return item
+    })
+    return setLocationResults(filteredData) 
   }
 
   const handleChange = (e)=>{
-    if(onlyNumbers(e.target.value)) {
-      setError('')
-      if(e.target.value.length === 5){
-        setDisabled(false)
-        return setInputVal(e.target.value) 
-      }
-    }
-    if(!onlyNumbers(e.target.value)){
-      e.target.value.length === 0 ? setError('') :
-      setError('Please enter a 5 digit numberical zip code')
-      setDisabled(true)
-    }
-    else{
-      setDisabled(true)
-    }
+        return setInputVal(e.target.value)
   }
 
   const handleSubmit  = (e)=>{
     e.preventDefault()
-    setZipCode(inputVal)
+    fetchLocations()
   }
 
   return (
     // make this into form so you can use onSubmit
         <form onSubmit={handleSubmit} className='search_bar_box'>
-            <input onChange={handleChange} type="text" placeholder='Enter Your Zip Code'/>
-            <button type='submit' disabled={isDisabled}>{isDisabled === true ? 'Disabled' : 'Submit'}</button>
+            <input onChange={handleChange} type="text" placeholder='Enter City Name or Zip'/>
+            <button type='submit'><img src={Icons.searchIcon} alt="" /></button>
+            <LocationSelect/>
         </form>
   )
 }
 
-export default ZipSearch
+export default LocationSearch

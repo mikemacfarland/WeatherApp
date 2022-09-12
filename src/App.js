@@ -1,7 +1,6 @@
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import { WeatherProvider } from './context/WeatherContext';
 import Weather from './pages/Weather';
-import HourlyWeather from './pages/DailyWeather';
 
 // how make this app into very cool app
 //  --.05 use context to pass all states--
@@ -24,7 +23,6 @@ function App() {
         <Router>
           <Routes>
             <Route exact path='/' element={<Weather/>}/>
-            <Route exact path='/hourly_weather' element={<HourlyWeather/>}/>
           </Routes>
         </Router>
       </WeatherProvider>

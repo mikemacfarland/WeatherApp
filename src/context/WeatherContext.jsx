@@ -10,7 +10,7 @@ export const WeatherProvider = ({children}) =>{
         PrimaryPostalCode: '49931'
         }
         )
-    const [forecastType,setForecastType] = useState('5-Day')
+    // const [forecastType,setForecastType] = useState('5-Day')
     const [weather,setWeather] =  useState([])
     const [error,setError] = useState('')
     const apiKey = 'sEXI2rsvsiBsixCl56UM26BkmhwNFCyl'

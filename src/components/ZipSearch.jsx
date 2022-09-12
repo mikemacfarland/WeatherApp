@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Icons from "../assets/Icons";
 import {useState,useContext} from "react"
 import WeatherContext from "../context/WeatherContext";
@@ -14,6 +13,7 @@ function LocationSearch() {
   const fetchLocations = async ()=>{
     const response = await fetch(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${inputVal}`)
     const data = await response.json()
+    // eslint-disable-next-line array-callback-return
     const filteredData = data.filter(item =>{
       if(item.Country.ID === country)
         return item

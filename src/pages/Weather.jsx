@@ -6,7 +6,7 @@ import WeatherContext from '../context/WeatherContext';
 
 function Weather() {
 
-    const {error,forecast} = useContext(WeatherContext)
+    const {error} = useContext(WeatherContext)
 
   return (
     <>

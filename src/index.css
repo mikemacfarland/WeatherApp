@@ -1,10 +1,14 @@
 /* @TODO 
     REFACTOR CSS USING FLEXBOX FOR DISPLAY LAYOUT */
+    
+/* @TODO 
+    SEARCHBAR NEEDS TO BE FIXED FOR SMALLER SCREENS ON FLEX*/
 
 *{
     padding: 0;
     margin:0;
     user-select: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
@@ -14,15 +18,15 @@ body{
 .wrapper{
     position: relative;
     display: flex;
+    align-items: center;
     flex-direction: column;
     max-width: 80%;
     margin: 25vh auto;
 }
 
 .intro{
-    
     text-align: center;
-    margin: 1rem;
+    margin: 1rem auto;
 }
 
 .error{
@@ -31,6 +35,39 @@ body{
     transform: translateX(-50%);
     left: 50%;
     color: rgb(219, 17, 17);
+}
+
+.about{
+    display: inherit;
+    flex-direction: column;
+    align-items: left;
+}
+
+/* ROUTER LINKS */
+#about,
+#home{
+    display: flex;
+    background-color: #f1f1f1;
+    margin-top: 2rem;
+    height: 45px;
+    width: fit-content;
+    padding: 0 2rem;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#about:hover,
+#home:hover{
+    background-color: antiquewhite;
+}
+
+#about:active,
+#home:active{
+    color: initial;
+    transform: scale(.98);
 }
 
 /* FORECAST SELECT */
@@ -73,7 +110,7 @@ body{
 
 .search_bar_box{
     position: relative;
-    margin: 1rem auto 2rem auto;
+    margin: 1rem auto 3rem auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -84,12 +121,12 @@ body{
 .search_bar_box input{
     margin-right: 1rem;
     text-indent: .5rem;
-    height: 40px;
+    height: 45px;
     font-size: 1rem;
     outline: none;
     width:245px;
     border: none;
-    border-radius: 20px;
+    border-radius: 22.5px;
 }
 
 .search_bar_box button{
@@ -100,15 +137,16 @@ body{
     border: none;
     
     cursor: pointer;
-    transform: translatex(50%);
-    left: 190px;
+    transform: translatex(-47.5%);
+    top: 2.5px;
+    right: 0px;
 }
 
 .location_select{
     position: absolute;
     list-style-type: none;
     background-color: #f1f1f1;
-    top: 40px;
+    top: 45px;
     left: 0px;
     width: 250px;
     z-index: 100;
@@ -126,11 +164,13 @@ body{
 }
 
 .location_select li:first-child{
-    border-radius: 20px 20px 0 0;
+    border-top-left-radius:20px ;
+    border-top-right-radius: 20px;
 }
 
 .location_select li:last-child{
-    border-radius: 0 0 20px 20px ;
+    border-bottom-left-radius:20px ;
+    border-bottom-right-radius: 20px;
 }
 
 .location_select li:hover{
@@ -153,9 +193,9 @@ body{
 .weather_list_item{
     text-decoration: none;
     color: inherit;
-    
     background-color: #f1f1f1;
-    margin: 1rem .4rem;
+    width: 130px;
+    margin: .7rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -165,6 +205,15 @@ body{
     border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 8px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
+}
+
+.weather_list_item:hover{
+    transform: scale(1.2);
+    transition: transform .4s ease-in-out;
+}
+
+.weather_list_item:not(:hover){
+    transition: all .4s ease-in-out;
 }
 
 .temp{

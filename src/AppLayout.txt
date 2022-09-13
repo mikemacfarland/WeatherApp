@@ -1,6 +1,0 @@
-types of weather - 12hr,5day,10day,15day
-selection: buttons or dropdown
-
-
-search function: set location by search, 
-how to display results? - dropdown

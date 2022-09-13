@@ -7,6 +7,7 @@ export const WeatherProvider = ({children}) =>{
 
     const [locationResults,setLocationResults] = useState([])
     const [location,setLocation] = useState({
+        PrimaryPostalCode: '49931',
         LocalizedName: 'Houghton',
         Key: '333677',
         AdministrativeArea:{

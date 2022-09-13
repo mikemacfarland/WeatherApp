@@ -7,17 +7,16 @@ import ForecastSelect from '../components/ForecastSelect';
 
 function Weather() {
 
-    const {error,location} = useContext(WeatherContext)
+    const {error,location,forecastType} = useContext(WeatherContext)
 
   return (
     <>
-        <p className='intro' >you are viewing the {'forecast type'} forecast for {location.LocalizedName} {location.AdministrativeArea.ID}, {location.PrimaryPostalCode}</p>
+        <p className='intro' >you are viewing the {forecastType} forecast for {location.LocalizedName} {location.AdministrativeArea.ID}, {location.PrimaryPostalCode}</p>
         <ForecastSelect/>
         <LocationSearch/>
         <p className='error'>{error}</p>
-        <div className='weather_slider'>
-          <WeatherList/>
-        </div>
+        {/* @TODO issue with weatherList breaking state or trying to update before state is set */}
+        <WeatherList/>
     </>
   )
 }

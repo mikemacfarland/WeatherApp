@@ -1,5 +1,4 @@
 import searchIcon from './Icons/searchIcon.png'
-
 import I1 from './Icons/accuWeatherIcons/01-s.png'
 import I2 from './Icons/accuWeatherIcons/02-s.png'
 import I3 from './Icons/accuWeatherIcons/03-s.png'
@@ -30,6 +29,7 @@ import I29 from './Icons/accuWeatherIcons/29-s.png'
 import I30 from './Icons/accuWeatherIcons/30-s.png'
 import I31 from './Icons/accuWeatherIcons/31-s.png'
 import I32 from './Icons/accuWeatherIcons/32-s.png'
+import I33 from './Icons/accuWeatherIcons/33-s.png'
 
 
 const Icons ={
@@ -63,7 +63,8 @@ const Icons ={
     I29,
     I30,
     I31,
-    I32
+    I32,
+    I33
 }
 
 // icons used from https://developer.accuweather.com/weather-icons

@@ -17,23 +17,32 @@ export const WeatherProvider = ({children}) =>{
     const [forecastType,setForecastType] = useState('5-Day')
     const [weather,setWeather] =  useState([])
     const [error,setError] = useState('')
-
-
-
+    
     // @TODO apiKey needs to be stored on backend when deployed !!
     // also hide from network requests page in devtools.? is that possible?
-    const apiKey = 'sEXI2rsvsiBsixCl56UM26BkmhwNFCyl'
+    const apiKey = 'DGGHPhydnUGCKsmpQVYjnMuKrDA0iMHV'
     
+
+    // @TODO issues with fetch call when switching forecastType from 12 to 5
     const fetchWeather = async ()=>{
-        const response =  await fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${location.PrimaryPostalCode}?apikey=${apiKey}`)
+        
+        const url = forecastType === '5-Day' ? `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${location.PrimaryPostalCode}?apikey=${apiKey}` : `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${location.PrimaryPostalCode}?apikey=${apiKey}`
+        const response =  await fetch(url)
         const data = await response.json()
-        return setWeather(data.DailyForecasts)
+        if(forecastType === '5-Day'){
+            console.log(data.DailyForecasts)
+            return setWeather(data.DailyForecasts)
+        }
+        if(forecastType === '12Hr'){
+            console.log(data) 
+            return setWeather(data)
+        }    
     }
 
     useEffect(()=>{
         fetchWeather()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[location])
+    },[forecastType,location])
 
     return <WeatherContext.Provider value={{
                 location,

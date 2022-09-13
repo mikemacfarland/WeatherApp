@@ -4,10 +4,12 @@ import WeatherContext from "../context/WeatherContext"
 function ForecastSelect() {
 
   const {setForecastType,forecastType} = useContext(WeatherContext)
-
-  //use state to manage this variable
+  
+  // @TODO store these values in state
   const types = [
-    '12Hr','5-Day','10-Day','15-Day'
+    '12Hr','5-Day'
+    // 10 and  15 day only avaliable on a elite license
+    // '10day','15day'
   ]
 
   const handleClick = (e)=>{

@@ -5,8 +5,6 @@ import { useContext } from 'react';
 import WeatherContext from '../context/WeatherContext';
 import ForecastSelect from '../components/ForecastSelect';
 
-
-
 function Weather() {
 
   const {error,forecastType,location} = useContext(WeatherContext)

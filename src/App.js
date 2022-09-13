@@ -2,6 +2,7 @@ import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import { WeatherProvider } from './context/WeatherContext';
 import About from './pages/About';
 import Weather from './pages/Weather';
+import Footer from './components/Footer';
 
 // how make this app better
 //   make weather tabs openable and get hourly weather for a day
@@ -15,17 +16,20 @@ import Weather from './pages/Weather';
 function App() {
 
   return (
-    <div className='wrapper'>
-      {/* context porvider */}
-      <WeatherProvider>
-        <Router>
-          <Routes>
-            <Route exact path='/' element={<Weather/>}/>
-            <Route exact path='/about' element={<About/>}/>
-          </Routes>
-        </Router>
-      </WeatherProvider>
-  </div>
+    <>
+      <div className='wrapper'>
+        {/* context porvider */}
+        <WeatherProvider>
+          <Router>
+            <Routes>
+              <Route exact path='/' element={<Weather/>}/>
+              <Route exact path='/about' element={<About/>}/>
+            </Routes>
+          </Router>
+        </WeatherProvider>
+      </div>
+      <Footer/>
+    </>
   )
 }
 

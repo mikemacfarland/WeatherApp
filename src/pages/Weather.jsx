@@ -5,9 +5,10 @@ import WeatherContext from '../context/WeatherContext';
 import ForecastSelect from '../components/ForecastSelect';
 
 
+
 function Weather() {
 
-    const {error,location,forecastType} = useContext(WeatherContext)
+  const {error,forecastType,location} = useContext(WeatherContext)
 
   return (
     <>

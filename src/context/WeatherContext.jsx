@@ -8,7 +8,7 @@ export const WeatherProvider = ({children}) =>{
     const [locationResults,setLocationResults] = useState([])
     const [location,setLocation] = useState({
         LocalizedName: 'Houghton',
-        PrimaryPostalCode: '49931',
+        Key: '333677',
         AdministrativeArea:{
             ID: 'Mi'
         }
@@ -22,11 +22,10 @@ export const WeatherProvider = ({children}) =>{
     // also hide from network requests page in devtools.? is that possible?
     const apiKey = 'DGGHPhydnUGCKsmpQVYjnMuKrDA0iMHV'
     
-
-    // @TODO issues with fetch call when switching forecastType from 12 to 5
+            //@TODO update api to use US locations only. currently searching zipcodes as international
     const fetchWeather = async ()=>{
         
-        const url = forecastType === '5-Day' ? `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${location.PrimaryPostalCode}?apikey=${apiKey}` : `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${location.PrimaryPostalCode}?apikey=${apiKey}`
+        const url = forecastType === '5-Day' ? `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${location.Key}?apikey=${apiKey}` : `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${location.Key}?apikey=${apiKey}`
         const response =  await fetch(url)
         const data = await response.json()
         if(forecastType === '5-Day'){

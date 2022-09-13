@@ -30,41 +30,34 @@ import I30 from './Icons/accuWeatherIcons/30-s.png'
 import I31 from './Icons/accuWeatherIcons/31-s.png'
 import I32 from './Icons/accuWeatherIcons/32-s.png'
 import I33 from './Icons/accuWeatherIcons/33-s.png'
+import I34 from './Icons/accuWeatherIcons/34-s.png'
+import I35 from './Icons/accuWeatherIcons/35-s.png'
+import I36 from './Icons/accuWeatherIcons/36-s.png'
+import I37 from './Icons/accuWeatherIcons/37-s.png'
+import I38 from './Icons/accuWeatherIcons/38-s.png'
+import I39 from './Icons/accuWeatherIcons/39-s.png'
+import I40 from './Icons/accuWeatherIcons/40-s.png'
+import I41 from './Icons/accuWeatherIcons/41-s.png'
+import I42 from './Icons/accuWeatherIcons/42-s.png'
+import I43 from './Icons/accuWeatherIcons/43-s.png'
+import I44 from './Icons/accuWeatherIcons/44-s.png'
+
+
+
 
 
 const Icons ={
     searchIcon,
-    I1,
-    I2,
-    I3,
-    I4,
-    I5,
-    I6,
-    I7,
-    I8,
-
-    I11,
-    I12,
-    I13,
-    I14,
-    I15,
-    I16,
-    I17,
-    I18,
-    I19,
-    I20,
-    I21,
-    I22,
-    I23,
-    I24,
-    I25,
-    I26,
-
-    I29,
-    I30,
-    I31,
-    I32,
-    I33
+    I1,I2,I3,I4,I5,
+    I6,I7,I8,
+    I11,I12,I13,I14,
+    I15,I16,I17,I18,
+    I19,I20,I21,I22,
+    I23,I24,I25,I26,
+    I29,I30,I31,I32,
+    I33,I34,I35,I36,
+    I37,I38,I39,I40,
+    I41,I42,I43,I44
 }
 
 // icons used from https://developer.accuweather.com/weather-icons

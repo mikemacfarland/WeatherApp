@@ -1,18 +1,16 @@
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import { WeatherProvider } from './context/WeatherContext';
+import About from './pages/About';
 import Weather from './pages/Weather';
 
-// how make this app into very cool app
-//  --.05 use context to pass all states--
-//  1. make weather tabs openable and get hourly weather for a day
-//  2. redesign the IU
-//  6. add display for night weather on day cards.
-//  3. add city and state detection
-//  4. add dropdown list of saved locations (add delete)
-//  4. add not found display for zip code error
-//  5. add functionability for 10 day forecast
-//  7. add functionability for other parameter displays
-//  6. export into mobile app
+// how make this app better
+//   make weather tabs openable and get hourly weather for a day
+//   redesign the IU ? 
+//   add display for night weather on day cards.
+//   add another route? for about page
+//   add dropdown list of saved locations (add delete)
+//   add not found display for zip code error
+//   export into mobile app
 
 function App() {
 
@@ -23,6 +21,7 @@ function App() {
         <Router>
           <Routes>
             <Route exact path='/' element={<Weather/>}/>
+            <Route exact path='/about' element={<About/>}/>
           </Routes>
         </Router>
       </WeatherProvider>

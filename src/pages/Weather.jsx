@@ -16,7 +16,6 @@ function Weather() {
         <ForecastSelect/>
         <LocationSearch/>
         <p className='error'>{error}</p>
-        {/* @TODO issue with weatherList breaking state or trying to update before state is set */}
         <WeatherList/>
     </>
   )

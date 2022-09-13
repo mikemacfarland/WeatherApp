@@ -31,7 +31,6 @@ function LocationSearch() {
   }
 
   return (
-    // make this into form so you can use onSubmit
         <form onSubmit={handleSubmit} className='search_bar_box'>
             <input onChange={handleChange} type="text" placeholder='Enter City Name or Zip'/>
             <button type='submit'><img src={Icons.searchIcon} alt="" /></button>

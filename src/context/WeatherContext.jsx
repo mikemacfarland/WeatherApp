@@ -22,10 +22,9 @@ export const WeatherProvider = ({children}) =>{
     // also hide from network requests page in devtools.? is that possible?
     const apiKey = 'DGGHPhydnUGCKsmpQVYjnMuKrDA0iMHV'
     
-            //@TODO update api to use US locations only. currently searching zipcodes as international
     const fetchWeather = async ()=>{
         
-        const url = forecastType === '5-Day' ? `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${location.Key}?apikey=${apiKey}` : `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${location.Key}?apikey=${apiKey}`
+        const url = forecastType === '5-Day' ? `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${location.Key}?apikey=${apiKey}` : `https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${location.Key}?apikey=${apiKey}`
         const response =  await fetch(url)
         const data = await response.json()
         if(forecastType === '5-Day'){

@@ -30,6 +30,7 @@ function WeatherList() {
                                  <div>
                                     <img src={Icons[`I${day.Day ? day.Day.Icon : day.WeatherIcon}`]} alt={day.Day ? day.Day.IconPhrase : day.IconPhrase} />
                                 </div>
+                                <small className='weather_phrase'>{day.Day ? day.Day.IconPhrase : day.IconPhrase}</small>
                                 <div className='temp'>
                                     <p className='temp_max'>{day.Temperature.Maximum ? `${day.Temperature.Maximum.Value}°` : `${day.Temperature.Value}°`}</p>
                                     { day.Temperature.Minimum ?<p className='temp_min'>{  `${day.Temperature.Minimum.Value}°`}</p> : null}

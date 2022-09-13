@@ -19,7 +19,6 @@ function WeatherList() {
                 {weather.map((day,index) =>{
                     const dayName = forecastType === '5-Day' ? getDayName(day.Date) : day.DateTime
                     const getDayTime = (dateStr)=> {
-                    const timeZone = parseInt(dateStr.substring(20,22))
                     const newTime = parseInt(dateStr.substring(11,13))
                     const amPm = newTime >= 12 ? 'PM' : 'AM'
                     return `${((newTime+11)%12 +1)}${amPm}`

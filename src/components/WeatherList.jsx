@@ -14,7 +14,7 @@ function WeatherList() {
     // get 12hr time from string returned in 12hr forecast objects
     
     
-    return (<ul className='weather_slider'>
+    return (<ul className='weather__weatherList'>
 
                 {weather.map((day,index) =>{
                     const dayName = forecastType === '5-Day' ? getDayName(day.Date) : day.DateTime
@@ -25,15 +25,13 @@ function WeatherList() {
                     }
 
                         return (
-                            <li className='weather_list_item' key={day.Date ? day.Date : day.DateTime}>
-                                <p className="day">{day.Date ? dayName : getDayTime(day.DateTime)}</p>
-                                 <div>
-                                    <img src={Icons[`I${day.Day ? day.Day.Icon : day.WeatherIcon}`]} alt={day.Day ? day.Day.IconPhrase : day.IconPhrase} />
-                                </div>
-                                <small className='weather_phrase'>{day.Day ? day.Day.IconPhrase : day.IconPhrase}</small>
-                                <div className='temp'>
-                                    <p className='temp_max'>{day.Temperature.Maximum ? `${day.Temperature.Maximum.Value}°` : `${day.Temperature.Value}°`}</p>
-                                    { day.Temperature.Minimum ?<p className='temp_min'>{  `${day.Temperature.Minimum.Value}°`}</p> : null}
+                            <li className='weather__weatherList__card' key={day.Date ? day.Date : day.DateTime}>
+                                <h4>{day.Date ? dayName : getDayTime(day.DateTime)}</h4>
+                                <img src={Icons[`I${day.Day ? day.Day.Icon : day.WeatherIcon}`]} alt={day.Day ? day.Day.IconPhrase : day.IconPhrase} />
+                                <small>{day.Day ? day.Day.IconPhrase : day.IconPhrase}</small>
+                                <div className='weather__weatherList__card__temp'>
+                                    <p className='weather__weatherList__card__temp__high'>{day.Temperature.Maximum ? `${day.Temperature.Maximum.Value}°` : `${day.Temperature.Value}° `}</p>
+                                    { day.Temperature.Minimum ?<p className='weather__weatherList__card__temp__low'>/ {`${day.Temperature.Minimum.Value}°`}</p> : null}
                                 </div>
                             </li>
                         )})

@@ -6,7 +6,7 @@ function About() {
     <div className='about'>
         <h1>About</h1>
         <p>Developed and Designed by <strong>Mike Macfarland</strong></p>
-        <Link id='home' to='/'>Back to Weather</Link>
+        <Link className='about__homeLink' to='/'>Back to Weather</Link>
     </div>
   )
 }

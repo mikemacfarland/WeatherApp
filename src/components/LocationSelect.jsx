@@ -7,14 +7,16 @@ function LocationSelect() {
   const handleClick = (item)=>{
     setLocation(item)
     console.log(item)
+    
     setLocationResults([])
   }
 
+  //@TODO create way for list to close if user clicks off of list
   //@TODO set logic for results, if no rusults throw error. notify user 
   return (
-    <ul className="location_select">
+    <ul className='weather__locationSearch__locationSelect'>
       {locationResults.map(item =>{
-        return <li onClick={() =>handleClick(item)} key={item.Key} >{item.LocalizedName} {item.AdministrativeArea.ID}, {item.PrimaryPostalCode}</li> 
+        return <li className='weather__locationSearch__locationSelect__option' onClick={() =>handleClick(item)} key={item.Key} >{item.LocalizedName} {item.AdministrativeArea.ID}, {item.PrimaryPostalCode}</li> 
       })}
     </ul>
   )

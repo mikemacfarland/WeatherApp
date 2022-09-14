@@ -10,14 +10,14 @@ function Weather() {
   const {error,forecastType,location} = useContext(WeatherContext)
 
   return (
-    <>
-        <p className='intro' >you are viewing the {forecastType} forecast for <strong>{location.LocalizedName} {location.AdministrativeArea.ID}, {location.PrimaryPostalCode}</strong></p>
-        <ForecastSelect/>
-        <LocationSearch/>
-        <p className='error'>{error}</p>
-        <WeatherList/>
-        <Link id='about' to='/about'>About</Link>
-    </>
+    <div className='weather'>
+        <p className='weather__intro' >you are viewing the {forecastType} forecast for <strong>{location.LocalizedName} {location.AdministrativeArea.ID}, {location.PrimaryPostalCode}</strong></p>
+        <ForecastSelect className='weather__forecastSelect'/>
+        <LocationSearch className='weather__locationSearch'/>
+        <p className='weather__error'>{error}</p>
+        <WeatherList className='weather__weatherList'/>
+        <Link className='weather__aboutLink' id='about' to='/about'>About</Link>
+    </div>
   )
 }
 

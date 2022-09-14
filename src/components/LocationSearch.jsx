@@ -22,7 +22,8 @@ function LocationSearch() {
   }
 
   const handleChange = (e)=>{
-        return setInputVal(e.target.value)
+    setLocationResults([])
+    setInputVal(e.target.value)
   }
 
   const handleSubmit  = (e)=>{
@@ -31,9 +32,9 @@ function LocationSearch() {
   }
 
   return (
-        <form onSubmit={handleSubmit} className='search_bar_box'>
-            <input onChange={handleChange} type="text" placeholder='Enter City Name or Zip'/>
-            <button type='submit'><img src={Icons.searchIcon} alt="" /></button>
+        <form onSubmit={handleSubmit} className='weather__locationSearch'>
+            <input className='weather__locationSearch__input' onChange={handleChange} type="text" placeholder='Enter City Name or Zip'/>
+            <button className='weather__locationSearch__button' type='submit'><img src={Icons.searchIcon} alt="" /></button>
             <LocationSelect/>
         </form>
   )

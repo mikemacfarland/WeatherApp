@@ -7,7 +7,7 @@ function LocationSearch() {
 
   //importing context here
   const {apiKey,setLocationResults} = useContext(WeatherContext)
-  const [inputVal,setInputVal] = useState('49931')
+  const [inputVal,setInputVal] = useState('')
   const country = 'US'
 
   const fetchLocations = async ()=>{
@@ -28,7 +28,7 @@ function LocationSearch() {
 
   const handleSubmit  = (e)=>{
     e.preventDefault()
-    fetchLocations()
+    inputVal === '' ? setLocationResults([]) : fetchLocations()
   }
 
   return (

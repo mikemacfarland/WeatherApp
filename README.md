@@ -1,3 +1,3 @@
-this site can be viewed at
+To view this project visit:
 
 https://heartfelt-melomakarona-c7a08b.netlify.app/

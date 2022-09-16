@@ -11,7 +11,7 @@ function Weather() {
 
   return (
     <div className='weather'>
-        <p className='weather__intro' >you are viewing the {forecastType} forecast for <strong>{location.LocalizedName} {location.AdministrativeArea.ID}, {location.PrimaryPostalCode}</strong></p>
+        <p className='weather__intro' >you are viewing the {forecastType} forecast for<strong>&nbsp;{location.LocalizedName} {location.AdministrativeArea.ID}, {location.PrimaryPostalCode}</strong></p>
         <ForecastSelect className='weather__forecastSelect'/>
         <LocationSearch className='weather__locationSearch'/>
         <p className='weather__error'>{error}</p>

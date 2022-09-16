@@ -1,3 +1,4 @@
+
 import searchIcon from './Icons/searchIcon.png'
 import I1 from './Icons/accuWeatherIcons/01-s.png'
 import I2 from './Icons/accuWeatherIcons/02-s.png'

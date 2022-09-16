@@ -15,6 +15,7 @@ export const WeatherProvider = ({children}) =>{
         }
         },
         )
+    const [savedLocations,setSavedLocations] = useState([])
     const [forecastType,setForecastType] = useState('5-Day')
     const [weather,setWeather] =  useState([])
     const [error,setError] = useState('')
@@ -39,6 +40,7 @@ export const WeatherProvider = ({children}) =>{
     }
 
     useEffect(()=>{
+        
         fetchWeather()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[forecastType,location])
@@ -50,11 +52,13 @@ export const WeatherProvider = ({children}) =>{
                 locationResults,
                 error,
                 forecastType,
+                savedLocations,
                 setWeather,
                 setError,
                 setLocationResults,
                 setLocation,
                 setForecastType,
+                setSavedLocations
                 }}> 
                     {children}
                 </WeatherContext.Provider>

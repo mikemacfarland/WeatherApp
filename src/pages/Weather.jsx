@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 import { useContext,useState } from 'react';
 import WeatherContext from '../context/WeatherContext';
 import ForecastSelect from '../components/ForecastSelect';
-import SavedLocationsList from '../components/SavedLocationsList'
 
 function Weather() {
 

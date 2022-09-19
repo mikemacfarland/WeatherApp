@@ -118,9 +118,12 @@ footer {
   width: 40px;
   border-radius: 50%;
   border: none;
-  z-index: 2;
+  z-index: 3;
   top: 2.5px;
   right: 2.5px;
+}
+.weather__locationSearch__button .button__img {
+  z-index: 2;
 }
 .weather__locationSearch__locationSelect {
   position: absolute;

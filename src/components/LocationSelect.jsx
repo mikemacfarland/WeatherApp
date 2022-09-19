@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import WeatherContext from "../context/WeatherContext"
 import {ReactComponent as Star} from '../assets/Icons/star.svg'
+import LocationSaveButton from "./LocationSaveButton"
 
 function LocationSelect() {
   const {setSavedLocations,savedLocations,setLocationResults,locationResults,setLocation} = useContext(WeatherContext)
@@ -12,6 +13,7 @@ function LocationSelect() {
 
   // @TODO use localstorage to store saved locations upon this function running
   // @TODO change color of star dependent on save state
+
   const handleSave = (e,item)=>{
     e.stopPropagation()
     // seting variable to savedlocations state array
@@ -40,26 +42,16 @@ function LocationSelect() {
           return locations.push(item)
     }
 
-
-        
     setSavedLocations(locations)
-  }
-
-  const isSaved = (parsedItem)=>{
-    savedLocations.map(locationItem =>{
-      const isSaved = parsedItem.Key === locationItem.Key ? true : false
-      return isSaved
-    })
-  }
-
-  
+  }  
   
   //@TODO set logic for results, if no rusults throw error. notify user
   return (
       <ul className='weather__locationSearch__locationSelect'>
         {locationResults.map(item =>{
           return <li className='weather__locationSearch__locationSelect__option' onClick={() =>handleClick(item)} key={item.Key} >{item.LocalizedName} {item.AdministrativeArea.ID}, {item.PrimaryPostalCode}
-                    <button onClick={(e) =>handleSave(e,item)} className={isSaved(item) ? 'weather__locationSearch__locationSelect__option__button --saved' : 'weather__locationSearch__locationSelect__option__button'}><Star/></button>
+                    {/*@TODO make this button into a component to use state inside of it, pass props based on saved locations and current item */}
+                    <LocationSaveButton clickHandler={(e)=>handleSave(e,item)} locationItem={item}><Star/></LocationSaveButton>
                   </li> 
         })}
       </ul>

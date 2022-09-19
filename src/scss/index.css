@@ -301,5 +301,13 @@ footer {
 .about .__homeLink:active {
   background-color: #c2c2c2;
 }
+.about__list {
+  margin: 1rem 2rem;
+  font-weight: bold;
+}
+.about__list li {
+  font-weight: 100;
+  margin-left: 2rem;
+}
 
 /*# sourceMappingURL=index.css.map */

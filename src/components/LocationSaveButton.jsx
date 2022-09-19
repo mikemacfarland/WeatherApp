@@ -36,7 +36,7 @@ function LocationSaveButton({clickHandler,children,locationItem}) {
     
 
   return (
-    <button onClick={clickHandler} className={isSaved ? 'weather__locationSearch__locationSelect__option__button --saved' : 'weather__locationSearch__locationSelect__option__button'}>{children}</button>
+    <button onClick={clickHandler} className={isSaved ? '__button --saved' : '__button'}>{children}</button>
   )
 }
 

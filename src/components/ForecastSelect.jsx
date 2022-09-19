@@ -17,12 +17,12 @@ function ForecastSelect() {
   }
 
   return (
-    <ul className='weather__forecastSelect'>
+    <ul className='__forecastSelect'>
       {types.map(item=>{
         return(
           //modifier class for this item
-          <li className={`weather__forecastSelect__option ${item === forecastType ?
-              'weather__forecastSelect__option--active' :
+          <li className={`__forecastSelect__option ${item === forecastType ?
+              '__forecastSelect__option--active' :
               ''}`} 
               onClick={handleClick} key={item}>{item}
           </li>

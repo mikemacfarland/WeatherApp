@@ -25,15 +25,17 @@ footer {
 }
 
 .weather {
-  margin-top: 10rem;
+  padding-top: 10rem;
   display: inherit;
   flex-direction: inherit;
   align-items: center;
 }
-.weather__intro {
+.weather .__intro, .weather .__showSaved {
   display: inherit;
   align-items: center;
   text-align: center;
+  min-width: fit-content;
+  max-width: fit-content;
   margin: 1rem;
   background-color: #e0dad0;
   height: 45px;
@@ -41,7 +43,21 @@ footer {
   border-radius: 22.5px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
-.weather__forecastSelect {
+.weather .__showSaved {
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
+.weather .__showSaved:hover {
+  transform: scale(0.98);
+  transition: all 0.5s ease;
+}
+.weather .__showSaved:not(hover) {
+  transition: all 0.5s ease;
+}
+.weather .__showSaved:active {
+  background-color: #c2c2c2;
+}
+.weather .__forecastSelect {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -54,7 +70,7 @@ footer {
   background-color: #f8f8f8;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-.weather__forecastSelect__option {
+.weather .__forecastSelect__option {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -63,18 +79,18 @@ footer {
   width: 75px;
   height: 45px;
 }
-.weather__forecastSelect__option:first-of-type {
+.weather .__forecastSelect__option:first-of-type {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
-.weather__forecastSelect__option:last-of-type {
+.weather .__forecastSelect__option:last-of-type {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-.weather__forecastSelect__option--active {
+.weather .__forecastSelect__option--active {
   background-color: antiquewhite;
 }
-.weather__aboutLink {
+.weather .__aboutLink {
   display: inherit;
   align-items: center;
   justify-content: center;
@@ -87,20 +103,20 @@ footer {
   border-radius: 22.5px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
-.weather__aboutLink:hover {
+.weather .__aboutLink:hover {
   transform: scale(0.98);
   transition: all 0.5s;
 }
-.weather__aboutLink:active {
+.weather .__aboutLink:active {
   background-color: #c2c2c2;
 }
-.weather__locationSearch {
+.weather .__locationSearch {
   width: 300px;
   position: relative;
   border-radius: 22.5px;
   z-index: 1;
 }
-.weather__locationSearch__input {
+.weather .__locationSearch__input {
   outline: none;
   height: 45px;
   font-size: 1rem;
@@ -110,7 +126,7 @@ footer {
   z-index: 2;
   text-indent: 1rem;
 }
-.weather__locationSearch__button {
+.weather .__locationSearch__button {
   cursor: pointer;
   background-color: #c2c2c2;
   position: absolute;
@@ -122,10 +138,10 @@ footer {
   top: 2.5px;
   right: 2.5px;
 }
-.weather__locationSearch__button .button__img {
+.weather .__locationSearch__button__button__img {
   z-index: 2;
 }
-.weather__locationSearch__locationSelect {
+.weather .__locationSearch .__locationSelect {
   position: absolute;
   background-color: #f8f8f8;
   list-style-type: none;
@@ -138,10 +154,10 @@ footer {
   border-radius: 22.5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
-.weather__locationSearch__locationSelect::-webkit-scrollbar {
+.weather .__locationSearch .__locationSelect::-webkit-scrollbar {
   width: 0;
 }
-.weather__locationSearch__locationSelect__option {
+.weather .__locationSearch .__locationSelect__option {
   text-indent: 0.7rem;
   display: flex;
   flex-direction: row;
@@ -153,18 +169,18 @@ footer {
   background-color: #f8f8f8;
   cursor: pointer;
 }
-.weather__locationSearch__locationSelect__option:first-of-type {
+.weather .__locationSearch .__locationSelect__option:first-of-type {
   border-top-left-radius: 22.5px;
   border-top-right-radius: 22.5px;
 }
-.weather__locationSearch__locationSelect__option:last-of-type {
+.weather .__locationSearch .__locationSelect__option:last-of-type {
   border-bottom-left-radius: 22.5px;
   border-bottom-right-radius: 22.5px;
 }
-.weather__locationSearch__locationSelect__option:hover {
+.weather .__locationSearch .__locationSelect__option:hover {
   background-color: antiquewhite;
 }
-.weather__locationSearch__locationSelect__option__button {
+.weather .__locationSearch .__locationSelect__option .__button {
   width: 27px;
   height: 27px;
   fill: #c2c2c2;
@@ -174,13 +190,13 @@ footer {
   z-index: 2;
   cursor: pointer;
 }
-.weather__locationSearch__locationSelect__option__button:hover {
+.weather .__locationSearch .__locationSelect__option .__button:hover {
   fill: #ff6600;
 }
-.weather__locationSearch__locationSelect__option__button.--saved {
+.weather .__locationSearch .__locationSelect__option .__button.--saved {
   fill: #ff6600;
 }
-.weather__weatherList {
+.weather .__weatherList {
   margin: 1rem 3rem;
   max-width: 100%;
   display: inherit;
@@ -189,7 +205,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
-.weather__weatherList__card {
+.weather .__weatherList .__card {
   display: inherit;
   flex-direction: column;
   justify-content: center;
@@ -201,34 +217,34 @@ footer {
   margin: 1rem 0.5rem;
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
 }
-.weather__weatherList__card:hover {
+.weather .__weatherList .__card:hover {
   transform: scale(1.05);
   transition: all 0.5s ease;
 }
-.weather__weatherList__card:not(hover) {
+.weather .__weatherList .__card:not(hover) {
   transition: all 0.5s ease;
 }
-.weather__weatherList__card h4 {
+.weather .__weatherList .__card h4 {
   margin: 0.4rem auto;
   font-weight: 300;
 }
-.weather__weatherList__card img {
+.weather .__weatherList .__card img {
   min-height: 65px;
 }
-.weather__weatherList__card small {
+.weather .__weatherList .__card small {
   margin: 0.3rem auto;
   width: 80%;
 }
-.weather__weatherList__card__temp {
+.weather .__weatherList .__card .__temp {
   width: 60%;
   display: inherit;
   justify-content: center;
   align-items: center;
 }
-.weather__weatherList__card__temp__high {
+.weather .__weatherList .__card .__temp .__high {
   margin: 0.5rem 0.3rem 0.5rem 0;
 }
-.weather__weatherList__card__temp__low {
+.weather .__weatherList .__card .__temp .__low {
   margin: 0.5rem 0 0.5rem 0.3rem;
   color: #c2c2c2;
 }
@@ -240,7 +256,7 @@ footer {
   align-items: left;
   text-align: left;
 }
-.about__homeLink {
+.about .__homeLink {
   display: inherit;
   align-items: center;
   justify-content: center;
@@ -253,11 +269,14 @@ footer {
   border-radius: 22.5px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
-.about__homeLink:hover {
+.about .__homeLink:hover {
   transform: scale(0.98);
   transition: all 0.5s ease;
 }
-.about__homeLink:active {
+.about .__homeLink:not(hover) {
+  transition: all 0.5s ease;
+}
+.about .__homeLink:active {
   background-color: #c2c2c2;
 }
 

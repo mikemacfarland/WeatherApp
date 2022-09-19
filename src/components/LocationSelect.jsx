@@ -47,15 +47,13 @@ function LocationSelect() {
   
   //@TODO set logic for results, if no rusults throw error. notify user
   return (
-      <ul className='weather__locationSearch__locationSelect'>
+      <ul className='__locationSelect'>
         {locationResults.map(item =>{
-          return <li className='weather__locationSearch__locationSelect__option' onClick={() =>handleClick(item)} key={item.Key} >{item.LocalizedName} {item.AdministrativeArea.ID}, {item.PrimaryPostalCode}
-                    {/*@TODO make this button into a component to use state inside of it, pass props based on saved locations and current item */}
+          return <li className='__locationSelect__option' onClick={() =>handleClick(item)} key={item.Key} >{item.LocalizedName} {item.AdministrativeArea.ID}, {item.PrimaryPostalCode}
                     <LocationSaveButton clickHandler={(e)=>handleSave(e,item)} locationItem={item}><Star/></LocationSaveButton>
                   </li> 
         })}
       </ul>
-      
   )
 }
 

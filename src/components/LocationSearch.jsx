@@ -2,7 +2,6 @@ import Icons from "../assets/Icons";
 import {useState,useContext} from "react"
 import WeatherContext from "../context/WeatherContext";
 import LocationSelect from './LocationSelect'
-import SavedLocationsSelect from "./SavedLocaitons";
 
 function LocationSearch() {
   
@@ -32,10 +31,9 @@ function LocationSearch() {
   } 
 
   return (
-        <form onSubmit={handleSubmit} className='weather__locationSearch'>
-            <input className='weather__locationSearch__input' onChange={handleChange} type="text" placeholder='Enter City Name or Zip'/>
-            <button className='weather__locationSearch__button' type='submit'><img src={Icons.searchIcon} alt="" /></button>
-            <SavedLocationsSelect/>
+        <form onSubmit={handleSubmit} className='__locationSearch'>
+            <input className='__locationSearch__input' onChange={handleChange} type="text" placeholder='Enter City Name or Zip'/>
+            <button className='__locationSearch__button' type='submit'><img src={Icons.searchIcon} alt="" /></button>
             <LocationSelect/>
         </form>
   )

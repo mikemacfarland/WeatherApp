@@ -30,7 +30,8 @@ function LocationSelect() {
     }
     else if(locations.length > 0 && locationKeys.includes(item.Key)){
       console.log('check to remove items')
-      locations.map((locationItem,i)=>{
+      
+      locations.forEach((locationItem,i)=>{
         if(locationItem.Key === item.Key){
           // issue was using pop() instead of splice.... 
           locations.splice(i,1)

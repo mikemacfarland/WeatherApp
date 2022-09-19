@@ -19,7 +19,7 @@ function LocationSaveButton({clickHandler,children,locationItem}) {
     const checkSaved = ()=>{
             const keys = []
 
-            savedLocations.map(locationItem=>{
+            savedLocations.forEach(locationItem=>{
                 keys.push(locationItem.Key)
                 })
 

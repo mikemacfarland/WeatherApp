@@ -11,8 +11,8 @@ function SavedLocationsSelect() {
 
   return (
     // @TODO use context - weather location code and name,
-    // store code in state
-    // use code to fetch location when saved loc is selected *onClick onSelect?
+    
+    // @TODO use location code to fetch location when saved loc is selected *onClick onSelect?
     <ul className='weather__locationSearch__locationSelect'>
       {/* {savedLocations.map(item =>{
         return <li className='weather__locationSearch__locationSelect__option' onClick={() =>handleClick(item)} key={item.Key} >{item.LocalizedName} {item.AdministrativeArea.ID}, {item.PrimaryPostalCode}</li> 

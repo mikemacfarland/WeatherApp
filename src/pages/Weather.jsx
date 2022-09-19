@@ -7,10 +7,17 @@ import ForecastSelect from '../components/ForecastSelect';
 
 function Weather() {
 
-  const {error,forecastType,location} = useContext(WeatherContext)
+  const {error,forecastType,location,setLocationResults} = useContext(WeatherContext)
+
+  const handleFocus =(e)=>{
+    // @TODO - there may be a better way to make this work. but... it could be reused to add the same functionality to other components since called on a higher component
+    if(e.target.parentNodeclassName !== 'weather__locationSearch' || 'weather__locationSearch__locationSelect' || 'weather__locationSearch__locationSelect__option'){
+      setLocationResults([])
+    }
+  }
 
   return (
-    <div className='weather'>
+    <div className='weather' onClick={handleFocus}>
         <p className='weather__intro' >you are viewing the {forecastType} forecast for<strong>&nbsp;{location.LocalizedName} {location.AdministrativeArea.ID}, {location.PrimaryPostalCode}</strong></p>
         <ForecastSelect className='weather__forecastSelect'/>
         <LocationSearch className='weather__locationSearch'/>

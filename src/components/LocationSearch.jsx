@@ -5,8 +5,7 @@ import LocationSelect from './LocationSelect'
 import SavedLocationsSelect from "./SavedLocaitons";
 
 function LocationSearch() {
-
-  //importing context here
+  
   const {apiKey,setLocationResults} = useContext(WeatherContext)
   const [inputVal,setInputVal] = useState('')
   const country = 'US'
@@ -30,7 +29,7 @@ function LocationSearch() {
   const handleSubmit  = (e)=>{
     e.preventDefault()
     inputVal === '' ? setLocationResults([]) : fetchLocations()
-  }
+  } 
 
   return (
         <form onSubmit={handleSubmit} className='weather__locationSearch'>

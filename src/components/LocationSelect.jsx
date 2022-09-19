@@ -7,42 +7,63 @@ function LocationSelect() {
 
   const handleClick = (item)=>{ 
     setLocation(item)
-    console.log(item)
     setLocationResults([])
   }
 
-  // @TODO pass data from item to saved locations
-  // @TODO check in handleSave if item is saved. if so, remove from saved locations
   // @TODO use localstorage to store saved locations upon this function running
   // @TODO change color of star dependent on save state
   const handleSave = (e,item)=>{
     e.stopPropagation()
-    let locations = savedLocations
-    locations.push(item)
+    // seting variable to savedlocations state array
+    const locations = savedLocations
+
+    // locationKeys is set based on location array
+    let locationKeys = locations.map(locationItem=>{
+      return locationItem.Key
+    })
+
+    if(locations.length === 0){
+      console.log('add first item')
+      locations.push(item)
+    }
+    else if(locations.length > 0 && locationKeys.includes(item.Key)){
+      console.log('check to remove items')
+      locations.map((locationItem,i)=>{
+        if(locationItem.Key === item.Key){
+          // issue was using pop() instead of splice.... 
+          locations.splice(i,1)
+        }
+      })
+    }
+    else{
+          console.log('add additional items')
+          return locations.push(item)
+    }
+
+
+        
     setSavedLocations(locations)
   }
 
-  const checkSaved = (parsedItem)=>{
-    savedLocations.map(item=>{
-    if(parsedItem.Key === item.Key){
-    return true
-    }
-    else{
-      return null
-    }
+  const isSaved = (parsedItem)=>{
+    savedLocations.map(locationItem =>{
+      const isSaved = parsedItem.Key === locationItem.Key ? true : false
+      return isSaved
     })
   }
- 
-  //@TODO create way for list to close if user clicks off of list
+
+  
+  
   //@TODO set logic for results, if no rusults throw error. notify user
   return (
-    <ul className='weather__locationSearch__locationSelect'>
-      {locationResults.map(item =>{
-        return <li className='weather__locationSearch__locationSelect__option' onClick={() =>handleClick(item)} key={item.Key} >{item.LocalizedName} {item.AdministrativeArea.ID}, {item.PrimaryPostalCode}
-                <button onClick={(e) =>handleSave(e,item)} className={`weather__locationSearch__locationSelect__option__button ${checkSaved(item)}`}><Star/></button>
-              </li> 
-      })}
-    </ul>
+      <ul className='weather__locationSearch__locationSelect'>
+        {locationResults.map(item =>{
+          return <li className='weather__locationSearch__locationSelect__option' onClick={() =>handleClick(item)} key={item.Key} >{item.LocalizedName} {item.AdministrativeArea.ID}, {item.PrimaryPostalCode}
+                    <button onClick={(e) =>handleSave(e,item)} className={isSaved(item) ? 'weather__locationSearch__locationSelect__option__button --saved' : 'weather__locationSearch__locationSelect__option__button'}><Star/></button>
+                  </li> 
+        })}
+      </ul>
+      
   )
 }
 

@@ -59,6 +59,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
   width: 75px;
   height: 45px;
 }
@@ -106,6 +107,7 @@ footer {
   width: 100%;
   border-radius: inherit;
   border: none;
+  z-index: 2;
   text-indent: 1rem;
 }
 .weather__locationSearch__button {
@@ -116,6 +118,7 @@ footer {
   width: 40px;
   border-radius: 50%;
   border: none;
+  z-index: 2;
   top: 2.5px;
   right: 2.5px;
 }
@@ -159,8 +162,8 @@ footer {
   background-color: antiquewhite;
 }
 .weather__locationSearch__locationSelect__option__button {
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
   fill: #c2c2c2;
   background-color: inherit;
   border: none;
@@ -171,7 +174,7 @@ footer {
 .weather__locationSearch__locationSelect__option__button:hover {
   fill: #ff6600;
 }
-.weather__locationSearch__locationSelect__option__button--saved {
+.weather__locationSearch__locationSelect__option__button.--saved {
   fill: #ff6600;
 }
 .weather__weatherList {

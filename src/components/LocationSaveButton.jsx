@@ -12,8 +12,7 @@ function LocationSaveButton({clickHandler,children,locationItem}) {
 
     useEffect(()=>{
         checkSaved()
-        console.log(isSaved)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+            // eslint-disable-next-line react-hooks/exhaustive-deps
     },[clickHandler])
 
     const checkSaved = ()=>{
@@ -22,9 +21,6 @@ function LocationSaveButton({clickHandler,children,locationItem}) {
             savedLocations.forEach(locationItem=>{
                 keys.push(locationItem.Key)
                 })
-
-                console.log(keys)
-                console.log(locationItem.Key)
                 if(keys.includes(locationItem.Key)){
                     return setIsSaved(true)
                 }

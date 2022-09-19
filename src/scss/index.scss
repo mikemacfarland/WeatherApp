@@ -36,8 +36,8 @@ footer{
     align-items: center;
    
     // @TODO fix display with intero
-    & .__intro,
-    & .__showSaved{
+    .__intro,
+    .__showSaved{
         display: inherit;
         align-items: center;
         text-align: center;
@@ -52,7 +52,7 @@ footer{
         
     }
 
-    & .__showSaved{
+    .__showSaved{
         cursor: pointer;
         background-color: $secondary-color;
         &:hover{
@@ -67,8 +67,31 @@ footer{
         }
     }
 
+    .__error{
+        display: inherit;
+        opacity: 0;
+        transition: .5s ease all;
+    }
+    
+    .__error--active{
+            display: inherit;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            position: absolute;
+            top: 2rem;
+            background-color: $secondary-color;
+            height: 45px;
+            border-radius: 22.5px;
+            color: firebrick;
+            font-weight: 600;
+            box-shadow: 0 1px 4px rgba($color: #000000, $alpha: .2);
+            opacity: 1;
+            transition: .5s ease all;
+    }
+
     // FORECAST SELECT
-    & .__forecastSelect{
+    .__forecastSelect{
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -105,7 +128,7 @@ footer{
         }
     }
 
-    & .__aboutLink{
+    .__aboutLink{
         display: inherit;
         align-items: center;
         justify-content: center;
@@ -129,7 +152,7 @@ footer{
     }
 
     // LOCATION SEARCH
-    & .__locationSearch{
+    .__locationSearch{
         width: 300px;
         position: relative;
         border-radius: 22.5px;
@@ -164,7 +187,7 @@ footer{
             }
         }
 
-        & .__locationSelect{
+        .__locationSelect{
             position: absolute;
             background-color: $secondary-color;
             list-style-type: none;
@@ -204,7 +227,7 @@ footer{
                     background-color: $tertiary-color;
                 }
 
-                & .__button{
+                .__button{
                     width: 27px;
                     height: 27px;
                     fill: $quaternary-color;
@@ -229,7 +252,7 @@ footer{
 
     // WEATHER CARDS
     
-    & .__weatherList{
+    .__weatherList{
         margin: 1rem 3rem;
         max-width: 100%;
         display: inherit;
@@ -307,7 +330,7 @@ footer{
     align-items: left;
     text-align: left;
 
-    & .__homeLink{
+    .__homeLink{
         display: inherit;
         align-items: center;
         justify-content: center;

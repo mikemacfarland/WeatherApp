@@ -9,7 +9,7 @@ import Error from '../components/Error';
 
 function Weather() {
 
-  const {forecastType,location,setLocationResults,savedLocations} = useContext(WeatherContext)
+  const {forecastType,location,setLocationResults} = useContext(WeatherContext)
 
   const handleFocus =(e)=>{
     // @TODO - there may be a better way to make this work. but... it could be reused to add the same functionality to other components since called on a higher component

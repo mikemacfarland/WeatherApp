@@ -6,11 +6,11 @@
 }
 
 .wrapper {
-  background-color: lightgray;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-color: lightgray;
   text-align: center;
   min-height: calc(100vh - 77px);
 }
@@ -21,20 +21,23 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   background-color: lightgray;
 }
 
 .weather {
   padding-top: 10rem;
-  display: inherit;
-  flex-direction: inherit;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .weather .__intro,
 .weather .__showSaved {
-  display: inherit;
+  display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  flex-direction: row;
   min-width: fit-content;
   max-width: fit-content;
   margin: 1rem;
@@ -59,14 +62,14 @@ footer {
   background-color: #c2c2c2;
 }
 .weather .__error {
-  display: inherit;
   opacity: 0;
   transition: 0.5s ease all;
 }
 .weather .__error--active {
-  display: inherit;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: row;
   padding: 0 1rem;
   position: absolute;
   top: 2rem;
@@ -81,22 +84,23 @@ footer {
 }
 .weather .__forecastSelect {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: row;
   margin: 1rem;
   list-style-type: none;
   height: 45px;
   width: 150px;
   border-radius: 22.5px;
   background-color: #f8f8f8;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .weather .__forecastSelect__option {
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   z-index: 2;
   width: 75px;
   height: 45px;
@@ -113,9 +117,10 @@ footer {
   background-color: antiquewhite;
 }
 .weather .__aboutLink {
-  display: inherit;
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   cursor: pointer;
   color: inherit;
   text-decoration: none;
@@ -123,7 +128,7 @@ footer {
   background-color: #f8f8f8;
   width: 100px;
   border-radius: 22.5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .weather .__aboutLink:hover {
   transform: scale(0.98);
@@ -164,27 +169,29 @@ footer {
   z-index: 2;
 }
 .weather .__locationSearch .__locationSelect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: absolute;
   background-color: #f8f8f8;
   list-style-type: none;
-  display: flex;
-  flex-direction: column;
   width: 300px;
   max-height: 250px;
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 22.5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .weather .__locationSearch .__locationSelect::-webkit-scrollbar {
   width: 0;
 }
 .weather .__locationSearch .__locationSelect__option {
-  text-indent: 0.7rem;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
+  text-indent: 0.7rem;
   width: 100%;
   min-height: 45px;
   height: 45px;
@@ -219,25 +226,26 @@ footer {
   fill: #ff6600;
 }
 .weather .__weatherList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   margin: 1rem 3rem;
   max-width: 100%;
-  display: inherit;
   flex-wrap: wrap;
   list-style-type: none;
-  justify-content: center;
-  align-items: center;
 }
 .weather .__weatherList .__card {
-  display: inherit;
-  flex-direction: column;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: #f8f8f8;
   border-radius: 1rem;
   width: 175px;
   height: 200px;
   margin: 1rem 0.5rem;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 .weather .__weatherList .__card:hover {
   transform: scale(1.05);
@@ -259,9 +267,10 @@ footer {
 }
 .weather .__weatherList .__card .__temp {
   width: 60%;
-  display: inherit;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 .weather .__weatherList .__card .__temp .__high {
   margin: 0.5rem 0.3rem 0.5rem 0;
@@ -272,16 +281,20 @@ footer {
 }
 
 .about {
-  margin-top: 15rem;
+  max-width: 80%;
   display: inherit;
   flex-direction: column;
   align-items: left;
   text-align: left;
 }
+.about:first-of-type p {
+  line-height: 1.7rem;
+}
 .about .__homeLink {
-  display: inherit;
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   text-decoration: none;
   color: inherit;
   background-color: #f8f8f8;
@@ -308,6 +321,18 @@ footer {
 .about__list li {
   font-weight: 100;
   margin-left: 2rem;
+}
+@media only screen and (max-width: 480px) {
+  .about {
+    font-size: 0.9rem;
+    align-items: center;
+  }
+  .about:first-of-type p {
+    line-height: initial;
+  }
+  .about__list {
+    margin-left: 1rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

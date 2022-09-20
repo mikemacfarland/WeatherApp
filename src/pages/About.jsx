@@ -5,8 +5,8 @@ function About() {
   return (
     <div className='about'>
         <h1>About</h1>
-        <p>Developed and Designed by <strong>Mike Macfarland</strong></p>
-        <p>This SPA currently uses the <strong><a href="https://developer.accuweather.com/">accuweather API</a></strong> to generate data.</p>
+        <p>Developed and Designed by <strong>Mike Macfarland</strong><br/>
+        This SPA currently uses the <strong><a href="https://developer.accuweather.com/">accuweather API</a></strong> to generate content.</p>
 
         <ul className='about__list'>Future updates will include:
           <li>List to select saved locations</li>

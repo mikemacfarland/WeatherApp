@@ -10,9 +10,6 @@ function WeatherList() {
             var date = new Date(dateStr);
             return date.toLocaleDateString(locale, { weekday: 'long' });        
             }
-
-    // get 12hr time from string returned in 12hr forecast objects
-    
     
     return (<ul className='__weatherList'>
 

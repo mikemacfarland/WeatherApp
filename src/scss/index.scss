@@ -5,6 +5,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
+// @TODO  REFACTOR SCSS DOWN FURTHER, MORE VARIABLES, MORE MIXINS, REFACTOR CLASSNAMES IN APP??
+
 @mixin flex-column($justify){
     display: flex;
     align-items: center;
@@ -19,6 +21,17 @@
     flex-direction: row;
 }
 
+@mixin scale-on-hover($scale){
+    &:hover{
+        transform: scale($scale);
+        transition: all .5s ease;
+    }
+
+    &:not(hover){
+        transition: all .5s ease;
+    }
+}
+
 // @GLOBAL VARIABLES
 
 $box-shadow1: 0 1px 4px rgba($color: #000000, $alpha: .2);
@@ -27,6 +40,7 @@ $primary-color: #e0dad0;
 $secondary-color: #f8f8f8;
 $tertiary-color: antiquewhite;
 $quaternary-color: #c2c2c2;
+$quinary-color: rgb(255, 102, 0);
 
 .wrapper{
     @include flex-column(center);
@@ -46,6 +60,7 @@ footer{
     padding-top: 10rem;
     @include flex-column(center);
    
+    // FORECAST TYPE AND LOCATION DISPLAY
     .__intro,
     .__showSaved{
         @include flex-row(center);
@@ -59,22 +74,17 @@ footer{
         box-shadow: $box-shadow1;
         
     }
-
+    // SHOW SAVED BUTTON
     .__showSaved{
         cursor: pointer;
         background-color: $secondary-color;
-        &:hover{
-            transform:scale(.98);
-            transition: all .5s ease;
-        }
-        &:not(hover){
-            transition: all .5s ease;
-        }
+        @include scale-on-hover(.98);
         &:active{
             background-color: $quaternary-color;
         }
     }
 
+    // ERROR POPUP
     .__error{
         opacity: 0;
         transition: .5s ease all;
@@ -128,6 +138,7 @@ footer{
         }
     }
 
+    // ABOUT LINK
     .__aboutLink{
         @include flex-row(center);
         cursor: pointer;
@@ -139,10 +150,7 @@ footer{
         border-radius: 22.5px;
         box-shadow: $box-shadow1;
 
-        &:hover{
-            transform: scale(.98);
-            transition: all .5s;
-        }
+        @include scale-on-hover(.98);
 
         &:active{
             background-color: $quaternary-color;
@@ -222,8 +230,8 @@ footer{
                 }
 
                 .__button{
-                    width: 27px;
-                    height: 27px;
+                    width: 25px;
+                    height: 25px;
                     fill: $quaternary-color;
                     background-color: inherit;
                     border: none;
@@ -232,11 +240,15 @@ footer{
                     cursor: pointer;
 
                     &:hover{
-                        fill: rgb(255, 102, 0);
+                        fill: $quinary-color;
+                    }
+
+                    &:active{
+                        scale: .9;
                     }
 
                     &.--saved{
-                        fill: rgb(255, 102, 0);
+                        fill: $quinary-color;
                     }
                     
                 }
@@ -263,14 +275,7 @@ footer{
             box-shadow: $box-shadow2;
 
             // HOVER STATES TRANSITIONS
-            &:hover{
-                transform: scale(1.05);
-                transition: all .5s ease;
-            }
-
-            &:not(hover){
-                transition: all .5s ease;
-            }
+            @include scale-on-hover(1.1);
 
             & h4{
                 margin: .4rem auto;
@@ -305,9 +310,89 @@ footer{
         }
     }
     
+    // SAVED LOCATIONS POPUP LIST
+    .__savedLocationsList{
+        @include flex-column(center);
+        position: relative;
+        margin-bottom: 1rem;
+        z-index: 3;
 
-    
+        h4{
+            @include flex-row(space-between);
+            background-color: $primary-color;
+            text-indent: 1rem;
+            font-weight: 400;
+            font-size: 1rem;
+            width: 300px;
+            height: 45px;
+            border-radius: 22.5px;
+        }
+
+        ul{
+            position: absolute;
+            top: 45px;
+            list-style-type: none;
+            box-shadow: $box-shadow1;
+            border-radius: 22.5px;
+            max-height: 260px;
+            overflow-y: scroll;
+            transition: all .3s ease;
+            &::-webkit-scrollbar{
+                width: 0;
+            }
+        }
+
+        ul.--hidden{
+            max-height: 0;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .__option{
+            height: 45px;
+            width: 300px;
+            text-indent: 1rem;
+            background-color: $secondary-color;
+            @include flex-row(space-between);
+
+            &:hover{
+                background-color: $tertiary-color;
+            }
+
+            &:first-of-type{
+                // border-top-right-radius: 22.5px;
+                // border-top-left-radius: 22.5px;
+                // background-color: $primary-color;
+            }
+
+            &:last-of-type{
+                border-bottom-left-radius: 22.5px;
+                border-bottom-right-radius: 22.5px;
+            }
+
+        }
+
+        & button{
+            width: 15px;
+            height: 15px;
+            fill: $quaternary-color;
+            background-color: inherit;
+            border: none;
+            margin-right: .7rem;
+            z-index: 2;
+            cursor: pointer;
+
+            &:hover{
+                fill: $quinary-color;
+            }
+
+            &:active{
+                scale: .9;
+            }
+        }
+    }
 }
+
 
 // ABOUT PAGE
 .about{
@@ -321,8 +406,6 @@ footer{
         line-height: 1.7rem;
     }
 
-    
-
     .__homeLink{
         @include flex-column(center);
         text-decoration: none;
@@ -334,14 +417,7 @@ footer{
         border-radius: 22.5px;
         box-shadow: 0 1px 5px rgba($color: #000000, $alpha: .3);
 
-        &:hover{
-            transform: scale(.98);
-            transition: all .5s ease;
-        }
-
-        &:not(hover){
-            transition: all .5s ease;
-        }
+        @include scale-on-hover(.98);
 
         &:active{
             background-color: $quaternary-color;

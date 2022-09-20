@@ -132,7 +132,10 @@ footer {
 }
 .weather .__aboutLink:hover {
   transform: scale(0.98);
-  transition: all 0.5s;
+  transition: all 0.5s ease;
+}
+.weather .__aboutLink:not(hover) {
+  transition: all 0.5s ease;
 }
 .weather .__aboutLink:active {
   background-color: #c2c2c2;
@@ -210,8 +213,8 @@ footer {
   background-color: antiquewhite;
 }
 .weather .__locationSearch .__locationSelect__option .__button {
-  width: 27px;
-  height: 27px;
+  width: 25px;
+  height: 25px;
   fill: #c2c2c2;
   background-color: inherit;
   border: none;
@@ -221,6 +224,9 @@ footer {
 }
 .weather .__locationSearch .__locationSelect__option .__button:hover {
   fill: #ff6600;
+}
+.weather .__locationSearch .__locationSelect__option .__button:active {
+  scale: 0.9;
 }
 .weather .__locationSearch .__locationSelect__option .__button.--saved {
   fill: #ff6600;
@@ -248,7 +254,7 @@ footer {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 .weather .__weatherList .__card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   transition: all 0.5s ease;
 }
 .weather .__weatherList .__card:not(hover) {
@@ -278,6 +284,79 @@ footer {
 .weather .__weatherList .__card .__temp .__low {
   margin: 0.5rem 0 0.5rem 0.3rem;
   color: #c2c2c2;
+}
+.weather .__savedLocationsList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 1rem;
+  z-index: 3;
+}
+.weather .__savedLocationsList h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: #e0dad0;
+  text-indent: 1rem;
+  font-weight: 400;
+  font-size: 1rem;
+  width: 300px;
+  height: 45px;
+  border-radius: 22.5px;
+}
+.weather .__savedLocationsList ul {
+  position: absolute;
+  top: 45px;
+  list-style-type: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 22.5px;
+  max-height: 260px;
+  overflow-y: scroll;
+  transition: all 0.3s ease;
+}
+.weather .__savedLocationsList ul::-webkit-scrollbar {
+  width: 0;
+}
+.weather .__savedLocationsList ul.--hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.weather .__savedLocationsList .__option {
+  height: 45px;
+  width: 300px;
+  text-indent: 1rem;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.weather .__savedLocationsList .__option:hover {
+  background-color: antiquewhite;
+}
+.weather .__savedLocationsList .__option:last-of-type {
+  border-bottom-left-radius: 22.5px;
+  border-bottom-right-radius: 22.5px;
+}
+.weather .__savedLocationsList button {
+  width: 15px;
+  height: 15px;
+  fill: #c2c2c2;
+  background-color: inherit;
+  border: none;
+  margin-right: 0.7rem;
+  z-index: 2;
+  cursor: pointer;
+}
+.weather .__savedLocationsList button:hover {
+  fill: #ff6600;
+}
+.weather .__savedLocationsList button:active {
+  scale: 0.9;
 }
 
 .about {

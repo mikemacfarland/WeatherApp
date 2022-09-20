@@ -5,7 +5,6 @@ function ForecastSelect() {
 
   const {setForecastType,forecastType} = useContext(WeatherContext)
   
-  // @TODO store these values in state
   const types = [
     '12Hr','5-Day'
     // 10 and  15 day only avaliable on a elite license

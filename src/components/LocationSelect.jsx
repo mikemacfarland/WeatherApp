@@ -12,7 +12,6 @@ function LocationSelect() {
   }
 
   // @TODO use localstorage to store saved locations upon this function running
-  // @TODO change color of star dependent on save state
 
   const handleSave = (e,item)=>{
     e.stopPropagation()
@@ -23,30 +22,27 @@ function LocationSelect() {
     let locationKeys = locations.map(locationItem=>{
       return locationItem.Key
     })
-
+    // add first item
     if(locations.length === 0){
-      console.log('add first item')
       locations.push(item)
     }
+    // remove item if in list already
     else if(locations.length > 0 && locationKeys.includes(item.Key)){
-      console.log('check to remove items')
       
       locations.forEach((locationItem,i)=>{
         if(locationItem.Key === item.Key){
-          // issue was using pop() instead of splice.... 
           locations.splice(i,1)
         }
       })
     }
+    // add aditional item if not in list
     else{
-          console.log('add additional items')
           return locations.push(item)
     }
 
     setSavedLocations(locations)
   }  
   
-  //@TODO set logic for results, if no rusults throw error. notify user
   return (
       <ul className='__locationSelect'>
         {locationResults.map(item =>{

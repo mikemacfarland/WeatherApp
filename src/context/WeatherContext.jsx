@@ -22,7 +22,7 @@ export const WeatherProvider = ({children}) =>{
     
     // @TODO apiKey needs to be stored on backend when deployed !!
     // also hide from network requests page in devtools.? is that possible?
-    const apiKey = 'DGGHPhydnUGCKsmpQVYjnMuKrDA0iMHV'
+    const apiKey = 'Vx4rjgKrcCZ1GVWvHqGEdDOtW8ZDCNH8'
     
     const fetchWeather = async ()=>{
         

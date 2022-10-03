@@ -4,7 +4,7 @@ import { useEffect } from "react"
 
 
 function Error() {
-
+  
   const {error,setError} = useContext(WeatherContext)
 
     useEffect(()=>{

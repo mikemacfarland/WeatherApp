@@ -2,6 +2,7 @@ import { useContext,useState,useEffect } from "react"
 import WeatherContext from "../context/WeatherContext"
 
 //@TODO refactor this component, state can be used in parent component to render the stars one color or the other.
+//@TODO remove state where it isnt needed to create DOM events. use regular JS for DOM events
 //there is repeated code in this component and locationselect component. 
 
 function LocationSaveButton({clickHandler,children,locationItem}) {
